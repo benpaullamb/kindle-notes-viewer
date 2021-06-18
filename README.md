@@ -1,24 +1,66 @@
-# kindle-notes-viewer
+# Kindle Notes Viewer
 
-## Project setup
+![status: in progress](https://img.shields.io/badge/status-in--progress-green)
+
+## About this Project
+
+Kindle exports notes in a way that's hard to read. This web app accepts those exports and displays it in a more usable manner.
+
+### Built with
+
+- Vue.js, Vue CLI
+- Sass
+- Cheerio (HTML processing)
+
+## Getting Started
+
+### Prerequisites
+
+- Node
+
+### Installation
+
+1. Install the dependencies.
+
 ```
-npm install
+npm i
 ```
 
-### Compiles and hot-reloads for development
+2. Run the app locally with hot reloading.
+
 ```
-npm run serve
+npm run dev
 ```
 
-### Compiles and minifies for production
+Go to http://localhost:8080
+
+## Deployment
+
+This project is hosted on GitHub pages.
+
+1. Build the static pages.
+
 ```
 npm run build
 ```
 
-### Lints and fixes files
+2. Commit to the GitHub repo that has GitHub pages setup for the `/docs` directory.
+
 ```
-npm run lint
+git push
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Usage
+
+TBD
+
+## Roadmap
+
+- [ ] Highlights
+
+## Release History
+
+- v0.2.0
+  - Redesign of main area
+- v0.1.0
+  - Initial design

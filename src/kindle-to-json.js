@@ -22,7 +22,7 @@ const getText = (noteText) => {
 const getPageAndColour = (noteText) => {
   const noteHeading = noteText.find('.noteHeading').text();
   if (noteHeading) {
-    const metaRegex = /^highlight \((\w+)\) - page (\d)/i;
+    const metaRegex = /^highlight \((\w+)\) - page (\d+)/i;
     const matches = noteHeading.match(metaRegex);
     return {
       colour: matches[1],

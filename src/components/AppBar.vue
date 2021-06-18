@@ -21,6 +21,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  user-select: none;
   background: #131921;
 
   h1 {

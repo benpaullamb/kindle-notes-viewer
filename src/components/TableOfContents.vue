@@ -1,9 +1,12 @@
 <template>
   <div>
-    <span class="heading">Table of Contents</span>
-    <span v-for="section in sections" :key="section" class="section" @click="$emit('section-selected', section)">{{
-      section
-    }}</span>
+    <h2>Table of Contents</h2>
+    <ul>
+      <li v-for="section in sections" :key="`${section.page}-${section.heading}`">
+        <span class="section-heading">{{ section.heading }}</span>
+        <span class="section-page">{{ section.page }}</span>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -20,28 +23,27 @@ export default {
 
 <style lang="scss" scoped>
 div {
-  border-right: 1px solid grey;
-}
+  padding: 2rem;
+  display: inline-block;
 
-.heading {
-  padding: 16px;
-  display: block;
-  border-bottom: 1px solid grey;
-  font-size: 20px;
-}
+  h2 {
+    margin-bottom: 0.5rem;
+  }
 
-.section {
-  padding: 12px 16px;
-  display: block;
-  cursor: pointer;
-  font-size: 20px;
+  li {
+    margin-bottom: 0.25rem;
+    display: flex;
+    justify-content: space-between;
 
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    .section-heading {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-  &:hover {
-    background: #bbdefb;
+    .section-page {
+      margin-left: 1rem;
+    }
   }
 }
 </style>
