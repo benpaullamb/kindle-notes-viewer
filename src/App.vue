@@ -3,7 +3,7 @@
     <v-app-bar app>
       <v-toolbar-title
         >Kindle Notes Viewer
-        <span class="font-weight-bold">- {{ title }}</span>
+        <span v-if="title" class="font-weight-bold">- {{ title }}</span>
       </v-toolbar-title>
     </v-app-bar>
 

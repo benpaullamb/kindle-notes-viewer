@@ -1,11 +1,13 @@
 <template>
-  <v-list two-line>
+  <v-list two-line class="list">
     <file-input class="mb-4"></file-input>
 
     <div v-for="(section, i) in sections" :key="`section-${i}`">
       <v-divider v-if="i !== 0"></v-divider>
 
-      <v-subheader>{{ section.heading }}</v-subheader>
+      <v-subheader v-ripple class="clickable" @click="() => setSelectedHighlights(section.highlights)">{{
+        section.heading
+      }}</v-subheader>
 
       <v-list-item
         v-for="(highlight, j) in section.highlights"
@@ -45,4 +47,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.list {
+  height: 90vh;
+  overflow-y: auto;
+}
+
+.clickable {
+  cursor: pointer;
+}
+</style>

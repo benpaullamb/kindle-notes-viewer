@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="highlights">
     <div v-for="(highlight, i) in highlights" :key="`highlight-${i}`">
       <v-row>
         <v-col cols="auto">
-          <v-icon :color="highlight.colour" class="mt-4">circle</v-icon>
+          <v-icon :color="highlight.colour" class="mt-8">circle</v-icon>
         </v-col>
         <v-col>
-          <blockquote class="blockquote">{{ highlight.text }}</blockquote>
-          <span class="text-subtitle-2">Page {{ highlight.page }}</span>
+          <blockquote class="blockquote pb-2">{{ highlight.text }}</blockquote>
+          <span class="text-subtitle-2 pl-6">Page {{ highlight.page }}</span>
         </v-col>
       </v-row>
     </div>
@@ -24,4 +24,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.highlights {
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+</style>
