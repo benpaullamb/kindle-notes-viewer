@@ -11,6 +11,7 @@ Kindle exports notes in a way that's hard to read. This web app accepts those ex
 - Vue.js, Vue CLI
 - Sass
 - Cheerio (HTML processing)
+- Vuetify
 
 ## Getting Started
 

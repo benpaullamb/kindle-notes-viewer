@@ -5,6 +5,9 @@ module.exports = {
       title: 'Kindle Notes Viewer',
     },
   },
+
   publicPath: process.env.NODE_ENV === 'production' ? '/kindle-notes-viewer/' : '/',
   outputDir: 'docs',
+
+  transpileDependencies: ['vuetify'],
 };

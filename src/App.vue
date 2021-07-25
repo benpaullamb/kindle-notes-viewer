@@ -1,59 +1,42 @@
 <template>
-  <div class="container">
-    <app-bar @on-load="setBook" />
-    <main v-if="book">
-      <table-of-contents :sections="sections" />
-      <div>
-        <toolbar />
-      </div>
-    </main>
-  </div>
+  <v-app>
+    <v-app-bar app>
+      <v-toolbar-title
+        >Kindle Notes Viewer
+        <span class="font-weight-bold">- {{ title }}</span>
+      </v-toolbar-title>
+    </v-app-bar>
+
+    <v-main>
+      <v-container>
+        <v-row>
+          <v-col cols="4">
+            <notes-list />
+          </v-col>
+
+          <v-col cols="8">
+            <highlights />
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import AppBar from './components/AppBar.vue';
-import TableOfContents from './components/TableOfContents.vue';
-import Toolbar from './components/Toolbar.vue';
+import NotesList from './components/NotesList.vue';
+import Highlights from './components/Highlights.vue';
 
 export default {
   name: 'App',
   components: {
-    AppBar,
-    TableOfContents,
-    Toolbar,
-  },
-  data() {
-    return {
-      book: null,
-    };
+    NotesList,
+    Highlights,
   },
   computed: {
-    sections() {
-      return this.book.sections.map((section) => ({
-        heading: section.heading,
-        page: section.highlights[0].page,
-      }));
-    },
-  },
-  methods: {
-    setBook(book) {
-      console.log(book);
-      this.book = book;
+    title() {
+      return this.$store.state.book?.title;
     },
   },
 };
 </script>
-
-<style lang="scss">
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: Arial, Helvetica, Verdana, sans-serif;
-}
-
-main {
-  display: grid;
-  grid-template-columns: 25% 1fr;
-}
-</style>
