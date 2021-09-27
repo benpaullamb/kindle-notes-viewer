@@ -1,6 +1,6 @@
 # Kindle Notes Viewer
 
-![status: in progress](https://img.shields.io/badge/status-in--progress-green)
+![status: plan-to-finish](https://img.shields.io/badge/status-plan--to--finish-yellow)
 
 ## About this Project
 
